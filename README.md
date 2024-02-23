@@ -6,7 +6,7 @@
 
  date    : 2024/02/21
 
- update : 2024/02/22
+ update : 2024/02/23
 
 ***
 
@@ -14,6 +14,8 @@ express + qwik + vite , sample
 
 ***
 ### blog
+
+https://zenn.dev/knaka0209/books/b1bd883fb8dd95
 
 ***
 
