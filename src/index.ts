@@ -24,6 +24,9 @@ const errorObj = {ret: "NG", messase: "Error"};
 //app.use('/api/common', commonRouter);
 
 //MPA
+app.get('/test', (req: any, res: any) => {
+  try { res.send(renderToString(Test())); } catch (error) { res.sendStatus(500);}
+});
 app.get('/contact', (req: any, res: any) => {
   try { res.send(renderToString(Contact())); } catch (error) { res.sendStatus(500);}
 });
