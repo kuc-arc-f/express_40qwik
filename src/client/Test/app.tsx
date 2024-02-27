@@ -33,7 +33,7 @@ export const App = component$(() => {
         <a href="/">[ home ]</a>
         <hr />
       </div>
-      <h1 class="text-4xl font-bold">Test.tsx</h1>
+      <h1 class="text-4xl font-bold">Test.tsx!</h1>
       <hr />
       <div class="card">
         <lavel>Title:

@@ -10,7 +10,7 @@ export const App = component$(() => {
         <a href="/">[ home ]</a>
         <hr />
       </div>
-      <h1>About</h1>
+      <h1>About!!</h1>
       <div class="card">
         <button onClick$={() => count.value++}
         >[ count ] is {count.value}</button>
