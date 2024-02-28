@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => {
             './src/client/Contact.tsx',
             './src/client/Test.tsx',
             './src/client/Test2.tsx',
+            './src/client/Test2Show.tsx',
           ],
           formats: ['es'],
           fileName: '[name]',

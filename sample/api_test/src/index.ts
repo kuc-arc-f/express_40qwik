@@ -9,7 +9,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Test from './pages/Test';
 import Test2 from './pages/Test2';
-import TestShow from './pages/Test/TestShow';
+import Test2Show from './pages/Test2Show';
 //
 //import testRouter from './routes/test'; 
 import commonRouter from './routes/commonRouter';
@@ -25,6 +25,9 @@ const errorObj = {ret: "NG", messase: "Error"};
 app.use('/api/common', commonRouter);
 
 //MPA
+app.get('/test2/show', (req: any, res: any) => {
+  try { res.send(renderToString(Test2Show())); } catch (error) { res.sendStatus(500);}
+});
 app.get('/test2', (req: any, res: any) => {
   try { res.send(renderToString(Test2())); } catch (error) { res.sendStatus(500);}
 });

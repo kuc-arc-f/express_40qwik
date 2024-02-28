@@ -80,6 +80,9 @@ console.log("#btn" + new Date().toString() + ",Len=" +target.length);
         <div key={item.id}>
           <h3 class="text-3xl font-bold">title= {item.title}</h3>
           <span>id: {item.id}</span>
+          <a href={`/test2/show?id=${item.id}`}>
+          <button className="btn-outline-purple ms-2">Show</button>
+          </a>
           <hr class="my-2" />
         </div>
         );
