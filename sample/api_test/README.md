@@ -18,12 +18,11 @@ https://github.com/kuc-arc-f/hono_34api
 
 ***
 ### path
-* /test2: add, List
+* /test_api : add, List
 
 ***
 ### .env
 
-* VITE_API_URL set
 ```
 EXTERNAL_API_URL="http://localhost"
 ```
