@@ -17,8 +17,8 @@ export default function Page() {
             <a href="/">[ home ]</a>
             <a href="/about">[ about ]</a>
             <a href="/contact">[ contact ]</a>
-            <a href="/test/">[ test ]</a>
-            <a href="/test2/">[ test2 ]</a>
+            <a href="/test1">[ test ]</a>
+            <a href="/test_api">[ testApi ]</a>
             <hr />
             <h1 className="text-4xl font-bold">Hello!</h1>
             <div id="app"></div>

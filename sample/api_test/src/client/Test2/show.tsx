@@ -35,21 +35,20 @@ console.log(item);
       return;
     }
     console.log(state.item.id);
-    const result = await CrudShow.delete(state.item.id);
-    if(result) {
-      const timerId = setTimeout(() => {
-        console.log("#delete.OK");
-        location.href = '/test2/';
-      }
-      , 500);
-    }
+    const timerId = setTimeout(async() => {
+      const result = await CrudShow.delete(state.item.id);
+      if(result) {
+        //console.log("#delete.OK");
+          location.href = '/test_api';
+        }
+    }, 500);
   });
   //
   return (
     <div class="container mx-auto my-2 px-8 bg-white">
       <div>
         <a href="/">[ home ]</a>
-        <a href="/test2/">[ test2 ]</a>
+        <a href="/test_api/">[ test2 ]</a>
         <hr />
       </div>
       <h1 class="text-4xl font-bold">show!!!</h1>

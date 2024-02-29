@@ -1,4 +1,3 @@
-//import { component$, useSignal } from '@builder.io/qwik'
 import { component$, useSignal, useStore, useComputed$, useTask$, $ } from '@builder.io/qwik';
 import CrudIndex from './CrudIndex';
 //
@@ -29,6 +28,11 @@ console.log(items);
     console.log("increment="+ new Date().toString());
     count.value++
   });
+  const addProc = $(async() => {
+//    console.log("increment="+ new Date().toString());
+    await CrudIndex.addItem(); 
+    location.reload();
+  });
   //
   return (
     <div class="container mx-auto my-2 px-8 bg-white">
@@ -45,24 +49,8 @@ console.log(items);
         <hr class="my-2" />
         <button onClick$={() => count.value++} class="btn-outline-purple"
         >count is {count.value}</button>
-        <button onClick$={increment} class="ms-2 btn-outline-purple"
-        >count2 is {count.value}</button>
-        {/* add */}
-        <button onClick$={() => {
-            const target =state.items;
-console.log("#btn" + new Date().toString() + ",Len=" +target.length);
-            const title = document.querySelector("#title");
-            let titleValue = "";
-            //@ts-ignore
-            if(title){ titleValue = title.value }
-            const addId = target.length + 1;
-            target.push({id: addId, title: titleValue});
-            //@ts-ignore
-            title.value = "";
-        }}
-        class="ms-2 btn">Add</button>
-        {/*
-        */}
+        <button onClick$={addProc} class="ms-2 btn-purple"
+        >AddItem</button>
         {/* test */}
         <button type="button" class="ms-2 btn-outline-purple"
           onClick$={() => {
@@ -80,7 +68,7 @@ console.log("#btn" + new Date().toString() + ",Len=" +target.length);
         <div key={item.id}>
           <h3 class="text-3xl font-bold">title= {item.title}</h3>
           <span>id: {item.id}</span>
-          <a href={`/test2/show?id=${item.id}`}>
+          <a href={`/test_api/show?id=${item.id}`}>
           <button className="btn-outline-purple ms-2">Show</button>
           </a>
           <hr class="my-2" />

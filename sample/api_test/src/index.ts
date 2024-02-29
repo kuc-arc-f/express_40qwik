@@ -25,13 +25,13 @@ const errorObj = {ret: "NG", messase: "Error"};
 app.use('/api/common', commonRouter);
 
 //MPA
-app.get('/test2/show', (req: any, res: any) => {
+app.get('/test_api/show', (req: any, res: any) => {
   try { res.send(renderToString(Test2Show())); } catch (error) { res.sendStatus(500);}
 });
-app.get('/test2', (req: any, res: any) => {
+app.get('/test_api', (req: any, res: any) => {
   try { res.send(renderToString(Test2())); } catch (error) { res.sendStatus(500);}
 });
-app.get('/test', (req: any, res: any) => {
+app.get('/test1', (req: any, res: any) => {
   try { res.send(renderToString(Test())); } catch (error) { res.sendStatus(500);}
 });
 app.get('/contact', (req: any, res: any) => {
