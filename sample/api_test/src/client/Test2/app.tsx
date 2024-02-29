@@ -1,5 +1,6 @@
 import { component$, useSignal, useStore, useComputed$, useTask$, $ } from '@builder.io/qwik';
 import CrudIndex from './CrudIndex';
+import {Head} from '../../components/Head';
 //
 const dataItems = [
   {id:1 , title: "title_1"},
@@ -23,11 +24,12 @@ export const App = component$(() => {
 console.log(items);
     cleanup(() => clearTimeout(id));
   });
-  //
+  /*
   const increment = $(() => {
     console.log("increment="+ new Date().toString());
     count.value++
   });
+  */
   const addProc = $(async() => {
 //    console.log("increment="+ new Date().toString());
     await CrudIndex.addItem(); 
@@ -35,11 +37,9 @@ console.log(items);
   });
   //
   return (
+  <div>
     <div class="container mx-auto my-2 px-8 bg-white">
-      <div>
-        <a href="/">[ home ]</a>
-        <hr />
-      </div>
+      <Head />
       <h1 class="text-4xl font-bold">Test2!!!</h1>
       <hr />
       <div class="card">
@@ -47,21 +47,12 @@ console.log(items);
           <input type="text" id="title" class="input_text" />
         </lavel>
         <hr class="my-2" />
-        <button onClick$={() => count.value++} class="btn-outline-purple"
-        >count is {count.value}</button>
         <button onClick$={addProc} class="ms-2 btn-purple"
         >AddItem</button>
+        <button onClick$={() => count.value++} class="ms-2 btn-outline-purple"
+        >count is {count.value}</button>
         {/* test */}
-        <button type="button" class="ms-2 btn-outline-purple"
-          onClick$={() => {
-            console.log("#btn" + new Date().toString())
-          }}
-        >Test2
-        </button>
       </div>
-      <p class="read-the-docs">
-        Click on the Vite and Qwik logos to learn more
-      </p>
       <hr class="my-2" />
       {state.items.map((item: any) => {
         return (
@@ -77,8 +68,16 @@ console.log(items);
       })}
       <div>{time}</div>
     </div>
+  </div>
   )
 })
 /*
-<p>Count: {state.count}</p>
+<a href="/">[ home ]</a>
+<hr />
+<button type="button" class="ms-2 btn-outline-purple"
+onClick$={() => {
+  console.log("#btn" + new Date().toString())
+}}
+>Test2
+</button>
 */

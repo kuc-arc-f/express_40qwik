@@ -1,15 +1,12 @@
 import { component$, useSignal } from '@builder.io/qwik'
-
+import {Head} from '../../components/Head';
 //
 export const App = component$(() => {
   const count = useSignal(0)
   //
   return (
     <div class="container mx-auto my-2 px-8 bg-white">
-      <div>
-        <a href="/">[ home ]</a>
-        <hr />
-      </div>
+      <Head />
       <h1>About!!</h1>
       <div class="card">
         <button onClick$={() => count.value++}
