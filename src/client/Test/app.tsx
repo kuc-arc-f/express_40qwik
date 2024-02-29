@@ -1,6 +1,6 @@
-//import { component$, useSignal } from '@builder.io/qwik'
 import { component$, useSignal, useStore, useComputed$, useTask$, $ } from '@builder.io/qwik';
-
+import {Head} from '../../components/Head';
+import {Compo1} from './Compo1';
 //
 const dataItems = [
   {id:1 , title: "title_1"},
@@ -13,7 +13,6 @@ export const App = component$(() => {
   const state = useStore({ count: 0, items: [] });
   const count = useSignal(0)
   const time = useSignal('paused');
-
   //init
   useTask$(({ track, cleanup }) => {
     const value = track(() => text.value);
@@ -28,11 +27,9 @@ export const App = component$(() => {
   });
   //
   return (
-    <div class="container mx-auto my-2 px-8 bg-white">
-      <div>
-        <a href="/">[ home ]</a>
-        <hr />
-      </div>
+  <>
+    <div class="page_main_wrap container mx-auto my-2 px-8 bg-white">
+      <Head />
       <h1 class="text-4xl font-bold">Test.tsx!</h1>
       <hr />
       <div class="card">
@@ -68,9 +65,6 @@ console.log("#btn" + new Date().toString() + ",Len=" +target.length);
         >Test2
         </button>
       </div>
-      <p class="read-the-docs">
-        Click on the Vite and Qwik logos to learn more
-      </p>
       <hr class="my-2" />
       {state.items.map((item: any) => {
         return (
@@ -81,10 +75,14 @@ console.log("#btn" + new Date().toString() + ",Len=" +target.length);
         </div>
         );
       })}
-      <div>{time}</div>
     </div>
+    <Compo1 params={111} />
+    <style>{`
+    .page_main_wrap{ min-height: 600px };
+    `}</style>
+  </>
   )
 })
 /*
-<p>Count: {state.count}</p>
+<div>{time}</div>
 */
