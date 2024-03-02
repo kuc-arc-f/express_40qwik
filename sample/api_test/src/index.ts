@@ -1,6 +1,7 @@
 
 import express from 'express';
 import { renderToString } from 'react-dom/server';
+import basicAuth  from "express-basic-auth";
 const app = express();
 import 'dotenv/config'
 //
@@ -19,6 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 console.log("env=", process.env.NODE_ENV)
 console.log("EXTERNAL_API_URL=", process.env.EXTERNAL_API_URL)
+//auth
+app.use(basicAuth({
+  users: { "test": "1111" },
+  challenge: true,
+}));
 // 
 const errorObj = {ret: "NG", messase: "Error"};
 // route
