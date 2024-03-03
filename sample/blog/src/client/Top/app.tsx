@@ -1,16 +1,16 @@
 import { component$, useSignal, useStore, useComputed$, useTask$, $ } from '@builder.io/qwik';
-//import {Head} from '../../components/Head';
-//import {Compo1} from './Compo1';
 import HttpCommon from '../lib/HttpCommon';
 import CrudIndex from './CrudIndex';
 
 //
 let pageItems: any[] = [];
+/*
 const dataItems = [
   {id:1 , title: "title_1"},
   {id:2 , title: "title_2"},
   {id:3 , title: "title_3"},
 ];
+*/
 //
 export const App = component$(() => {
   const text = useSignal('qwik');
@@ -19,12 +19,6 @@ export const App = component$(() => {
   const time = useSignal('paused');
   //init
   useTask$(({ track, cleanup }) => {
-    /*
-    const value = track(() => text.value);
-    const id = setTimeout(() => (state.items = dataItems)
-    , 100);
-    cleanup(() => clearTimeout(id));
-    */
     const btn_search = document.querySelector('#btn_search');
     btn_search?.addEventListener('click', async () => {
         const post_list_wrap = document.querySelector(`.post_list_wrap`) as HTMLInputElement;
@@ -33,10 +27,8 @@ export const App = component$(() => {
         }
         const res = await CrudIndex.search();
         state.items = res;
-//        setUpdatetime(new Date().toString());
       console.log(res);
     });
-
   });
   //
   return (

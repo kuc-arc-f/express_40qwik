@@ -102,27 +102,6 @@ console.log(json);
           throw new Error('Error , search');
       }
   },     
-   /**
-   *
-   * @param key: any
-   *
-   * @return
-   */     
-  /*
-  initProc: async function() {
-    const siteId = import.meta.env.VITE_SITE_ID;
-    const btn_search = document.querySelector('#btn_search');
-    btn_search?.addEventListener('click', async () => {
-        const post_list_wrap = document.querySelector(`.post_list_wrap`) as HTMLInputElement;
-        if (!post_list_wrap.classList.contains('d-none')) {
-            post_list_wrap?.classList.add('d-none');
-        }
-        const res = await this.search(Number(siteId));
-        this.displayItems(res);
-console.log(res);
-    });  
-  },
-  */
 
 }
 
