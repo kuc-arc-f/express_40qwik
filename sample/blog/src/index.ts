@@ -44,9 +44,13 @@ app.get('/posts/:id',async (req: any, res: any) => {
 });
 app.get('/', async (req: any, res: any) => {
   try {
+    let { page } = req.query;
+    if(!page) { page = '1';}
+console.log("page=", page);
+
     const site = await siteRouter.get();
-    const items = await postRouter.get_list_page(Number(1));
-    res.send(renderToString(PostsIndex({items: items, page: 1, site: site}))); 
+    const items = await postRouter.get_list_page(Number(page));
+    res.send(renderToString(PostsIndex({items: items, page: Number(page), site: site}))); 
   } catch (error) {
     res.sendStatus(500);
   }

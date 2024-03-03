@@ -49,6 +49,14 @@ export default function Page(props: any) {
         </div>
         );
       })}
+      {/* paginate */}
+      <div className="paginate_wrap py-4">
+        <a href={`/?page=${beforePage}`}><button className="btn-outline-purple"> ＜ </button>
+        </a>
+        <a href={`/?page=${nextPage}`}><button className="btn-outline-purple"> ＞ </button>
+        </a>
+      </div>
+      
     </div>
     <div id="app"></div>        
     {(process.env.NODE_ENV === "develop") ? (

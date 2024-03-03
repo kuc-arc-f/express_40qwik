@@ -1,7 +1,7 @@
 import HttpCommon from '../lib/HttpCommon';
 import LibPagenate from '../lib/LibPagenate';
 
-const perPage = 100;
+const perPage = 20;
 //
 interface Env {
     DB: Database
