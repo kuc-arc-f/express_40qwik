@@ -29,7 +29,7 @@ export default function Page(props: any) {
         <button className="ms-2 btn-outline-purple" id="btn_search"
         >Search</button>
     </div>
-    <div id="app"></div>    
+    {/* post_list_wrap */}
     <div className="post_list_wrap container mx-auto my-2 px-2">
       {props.items.map((item: any) => {
         return (
@@ -49,7 +49,13 @@ export default function Page(props: any) {
         </div>
         );
       })}
-    </div>        
+    </div>
+    <div id="app"></div>        
+    {(process.env.NODE_ENV === "develop") ? (
+        <script type="module" src="/static/Top.js"></script>
+    ): (
+        <script type="module" src="/public/static/Top.js"></script> 
+    )}
     <hr className="my-8" />
     <style>{`
     .post_list_wrap {min-height: 500px;}

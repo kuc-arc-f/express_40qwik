@@ -9,10 +9,13 @@ todos -index
 ******************************/
 router.post('/send_post', async function(req: any, res: any) {
   try {
-    //console.log("url=", process.env.API_URL);
-    const url = process.env.EXTERNAL_API_URL; 
+    const siteId = process.env.VITE_SITE_ID;
+    const apiKey = process.env.VITE_API_KEY;
+    const url = process.env.VITE_API_URL;
 //console.log(req.body);
     const path = req.body.api_url;	
+    req.body.api_key = apiKey;
+    req.body.siteId = Number(siteId);
 console.log("path=", url + path);
     const response = await axios.post(url + path, req.body, 
     {headers: { 'Content-Type': 'application/json'}

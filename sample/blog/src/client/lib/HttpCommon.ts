@@ -1,5 +1,4 @@
 import LibConfig from './LibConfig';
-//require('dotenv').config();
 //
 const HttpCommon = {
   /**
