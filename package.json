@@ -9,6 +9,7 @@
     "build:test": "vite build && vite build --mode client",
     "clean": "rimraf dist && rimraf public/static",
     "watch": "npx vite build --mode client --watch",
+    "watch:css": "npx tailwindcss -i ./src/main.css -o ./public/static/main.css --watch",
     "test": "ts-node src/index.ts"
   },
   "dependencies": {
