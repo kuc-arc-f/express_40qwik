@@ -6,7 +6,7 @@
 
  date    : 2024/02/21
 
- update : 2024/03/07
+ update : 2024/03/07 
 
 ***
 
@@ -24,6 +24,16 @@ yarn build
 ```
 yarn dev
 ```
+***
+### tailwindcss
+
+```
+npx tailwindcss -i ./src/main.css -o ./public/static/main.css
+
+#watch-mode
+npx tailwindcss -i ./src/main.css -o ./public/static/main.css --watch
+``` 
+
 ***
 ### blog
 
